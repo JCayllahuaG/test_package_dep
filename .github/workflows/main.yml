@@ -1,0 +1,26 @@
+name: Test Poetry Dependencies
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    
+    - name: Install Poetry
+      run: |
+        curl -sSL https://install.python-poetry.org | python3 -
+        echo "${{ runner.tool_cache }}/python/bin" >> $GITHUB_PATH
+
+    - name: Install dependencies
+      run: |
+        poetry install
