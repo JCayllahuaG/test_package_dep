@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "test-adding-deps-from-github"
+version = "0.1.0"
+description = ""
+authors = ["JCayllahuaG <u202019558@upc.edu.pe>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-package = {url = "https:github.com/testing-organization-jcayllahua/package-artifacts/releases/download/1.0.12/python_package-1.0.12-py3-none-any.whl"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
